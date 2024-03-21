@@ -27,6 +27,7 @@ cd paru
 
 makepkg -si
 
+cd ~/setup_scripts
 
 packages_to_install=$(cat installed_packages.txt)
 
