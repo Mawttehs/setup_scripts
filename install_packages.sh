@@ -37,6 +37,11 @@ cd ~/
 
 git clone git@github.com:Mawttehs/dotfiles.git
 
+rm -r ~/.config/i3
+rm -r ~/.config/polybar
+rm -r ~/.config/fontconfig
+rm -r ~/.config/nvim
+
 ln -s ~/dotfiles/i3-config ~/.config/i3
 ln -s ~/dotfiles/polybar ~/.config/polybar
 ln -s ~/dotfiles/fontconfig ~/.config/fontconfig
