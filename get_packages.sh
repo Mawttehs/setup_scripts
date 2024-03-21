@@ -1,6 +1,8 @@
 
-installed_packages_list=$(pacman -Qe)
+installed_packages_list=$(pacman -Qe | awk '{print $1}')
 
 
-echo $installed_packages_list > installed_packages.txt
+result=$(echo "$installed_packages_list" | sed 's/nvidia[^ ]*//g')
+
+echo $result > installed_packages.txt
 
