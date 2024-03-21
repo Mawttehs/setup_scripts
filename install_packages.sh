@@ -44,3 +44,5 @@ ln -s ~/dotfiles/nvim-setup ~/.config/nvim
 chsh -s /usr/bin/fish
 sudo chsh -s /usr/bin/fish 
 
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
