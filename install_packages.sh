@@ -31,7 +31,7 @@ cd ~/setup_scripts
 
 packages_to_install=$(cat installed_packages.txt)
 
-sudo paru -S $packages_to_install
+paru -S $packages_to_install
 
 cd ~/
 
