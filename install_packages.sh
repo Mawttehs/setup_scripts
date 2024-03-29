@@ -50,5 +50,16 @@ ln -s ~/dotfiles/nvim-setup ~/.config/nvim
 chsh -s /usr/bin/fish
 sudo chsh -s /usr/bin/fish 
 
+
+git clone git@github.com:gnotclub/xst.git
+
+cd xst
+
+rm ~/xst/config.def.h
+
+ln -s ~/xst/config.def.h ~/xst
+
+sudo make clean install
+
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
