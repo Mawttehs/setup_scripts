@@ -30,13 +30,9 @@ elif [ "$git_prompt" != "n" ]; then
     exit 1
 fi
 
-cd .. 
+git config --global user.email "mawtthes@gmail.com"
+git config --global user.name "Mawtthes"
 
-rm -r setup_scripts
-
-git clone git@github.com:Mawttehs/setup_scripts.git
-
-cd setup_scripts
 
 ./install_packages.sh "${RED}!!! IF YOU ARE SEEING THIS, SKIP THE GIT SETUP !!!${NC}"
 
@@ -86,4 +82,10 @@ ln -s ~/dotfiles/config.def.h ~/xst
 sudo make clean install
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+mkdir ~/.config/gtk-3.0/
+printf "[Settings]\ngtk-theme-name = Adwaita-dark" > ~/.config/gtk-3.0/settings.ini
+printf "[Settings]\ngtk-theme-name = Adwaita-dark" > ~/.config/gtk-4.0/settings.ini
+
+
 
