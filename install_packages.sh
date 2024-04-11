@@ -87,5 +87,14 @@ mkdir ~/.config/gtk-3.0/
 printf "[Settings]\ngtk-theme-name = Adwaita-dark" > ~/.config/gtk-3.0/settings.ini
 printf "[Settings]\ngtk-theme-name = Adwaita-dark" > ~/.config/gtk-4.0/settings.ini
 
+cd ~/
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+
+
 
 
