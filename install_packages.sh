@@ -91,10 +91,10 @@ cd ~/
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
-
+omf install nvm
+omf install lambda
 
 
 
