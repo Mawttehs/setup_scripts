@@ -84,5 +84,6 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 fish -c "omf install nvm"
 fish -c "omf install lambda"
 
+systemctl disable lightdm.service
 systemctl enable lemurs.service
 systemctl start lemurs.service
