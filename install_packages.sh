@@ -4,37 +4,24 @@
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${RED}$1${NC}"
+read -r -p "Enter your email: " email
 
-read -r -p "Do you wish to setup git? (Y/n): " git_prompt
+ssh-keygen -o -t rsa -C "$email"
 
-if [ "$git_prompt" = "y" ]; then
+cat ~/.ssh/id_rsa.pub
 
-    read -r -p "Enter your email: " email
+while true; do
+    read -p "Copy it to github, done? (Y/n): " answer
 
-    ssh-keygen -o -t rsa -C "$email"
-
-    cat ~/.ssh/id_rsa.pub
-
-    while true; do
-        read -p "Copy it to github, done? (Y/n): " answer
-
-        if [ "$answer" = "y" ]; then
-            break
-        else
-            echo "${RED}!!! YOU NEED TO DO THIS STEP !!!${NC}"
-        fi
-    done
-
-elif [ "$git_prompt" != "n" ]; then
-    exit 1
-fi
+    if [ "$answer" = "y" ]; then
+        break
+    else
+        echo "${RED}!!! YOU NEED TO DO THIS STEP !!!${NC}"
+    fi
+done
 
 git config --global user.email "mawtthes@gmail.com"
 git config --global user.name "Mawtthes"
-
-
-./install_packages.sh "${RED}!!! IF YOU ARE SEEING THIS, SKIP THE GIT SETUP !!!${NC}"
 
 sudo pacman -S --needed base-devel
 
@@ -65,6 +52,7 @@ ln -s ~/dotfiles/i3-config ~/.config/i3
 ln -s ~/dotfiles/polybar ~/.config/polybar
 ln -s ~/dotfiles/fontconfig ~/.config/fontconfig
 ln -s ~/dotfiles/nvim-setup ~/.config/nvim
+ln -s ~/dotfiles/lemurs_scripts/i3 /etc/lemurs/wms/i3
 
 chsh -s /usr/bin/fish
 sudo chsh -s /usr/bin/fish 
@@ -93,8 +81,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
-omf install nvm
-omf install lambda
-
+fish -c "omf install nvm"
+fish -c "omf install lambda"
 
 
